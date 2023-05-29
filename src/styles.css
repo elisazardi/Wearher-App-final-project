@@ -1,0 +1,37 @@
+.weather-app {
+  border: 1px grey solid;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 700px;
+}
+h1,
+h2,
+h3,
+p {
+  font-family: "Mukta", sans-serif;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.current-degrees {
+  display: inline;
+  font-size: 50px;
+  padding-right: 5px;
+  margin: 5px;
+}
+
+.d-f {
+  position: relative;
+  bottom: 20px;
+}
+.date-time {
+  font-size: 18px;
+  font-weight: 200;
+}
