@@ -14,8 +14,9 @@ body {
   font-family: "Mukta", sans-serif;
 }
 
-h2 {
-  font-size: 22px;
+h1,
+h3 {
+  color: lightsalmon;
 }
 
 h3 {
