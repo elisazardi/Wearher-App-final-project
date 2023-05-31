@@ -38,13 +38,13 @@ if (minutes < 10) {
 
 //change h2 in html with real time
 let time = document.querySelector("#date");
-time.innerHTML = `${day} ${hour}:${minutes},`;
+time.innerHTML = `${day} -`;
 
 //Display Weather Condition
 function displayWeatherCondition(response) {
-  document.querySelector("#current-degrees").innerHTML = Math.round(
-    response.data.temperature.current
-  );
+  celsiusTemperature = response.data.temperature.current;
+  document.querySelector("#current-degrees").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector("#humidity").innerHTML =
     response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -102,21 +102,24 @@ let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", getCurrentLocation);
 
 //change from degrees to f
+let celsiusTemperature = null;
 function changeToFahrenheit(event) {
   event.preventDefault();
-  let currentDegrees = document.querySelector("#current-degrees");
-  currentDegrees.innerHTML = "66";
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector("#current-degrees").innerHTML = Math.round(
+    fahrenheitTemperature
+  );
 }
-let linkDegrees = document.querySelector("#degrees-to-f");
-linkDegrees.addEventListener("click", changeToFahrenheit);
+let linkF = document.querySelector("#fahrenheit");
+linkF.addEventListener("click", changeToFahrenheit);
 
-function changeToDegrees(event) {
+function changeToCelsius(event) {
   event.preventDefault();
-  let currentDegrees = document.querySelector("#current-degrees");
-  currentDegrees.innerHTML = "18";
+  document.querySelector("#current-degrees").innerHTML =
+    Math.round(celsiusTemperature);
 }
-let linkFahrenheit = document.querySelector("#f-to-degrees");
-linkFahrenheit.addEventListener("click", changeToDegrees);
+let linkC = document.querySelector("#celsius");
+linkC.addEventListener("click", changeToCelsius);
 
 //Search default city
 searchCity("Barcellona");

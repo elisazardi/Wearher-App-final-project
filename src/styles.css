@@ -25,16 +25,14 @@ h3 {
 .current-degrees {
   display: inline;
   font-size: 65px;
-  padding-right: 5px;
-  margin-right: 5px;
-  margin-top: 5px;
+  padding-right: 10px;
 
   line-height: 0;
 }
 
 .d-f {
   position: relative;
-  bottom: 25px;
+  bottom: 28px;
 }
 
 .weather-description {
@@ -48,9 +46,9 @@ h3 {
 }
 #icon {
   position: relative;
-  bottom: 43px;
-  height: 100px;
-  width: 100px;
+  bottom: 45px;
+  height: 90px;
+  width: 90px;
 }
 .small {
   margin: 0 auto;
