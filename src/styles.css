@@ -44,11 +44,27 @@ h3 {
   margin-right: 20px;
   margin-bottom: 5px;
 }
+
+.not-selected {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: none;
+  color: lightsalmon;
+  cursor: default;
+}
+
 #icon {
   position: relative;
   bottom: 45px;
   height: 90px;
   width: 90px;
+}
+
+.select {
 }
 .small {
   margin: 0 auto;

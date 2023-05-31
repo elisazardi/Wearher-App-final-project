@@ -105,6 +105,9 @@ locationButton.addEventListener("click", getCurrentLocation);
 let celsiusTemperature = null;
 function changeToFahrenheit(event) {
   event.preventDefault();
+  linkF.classList.add("active");
+  linkC.classList.remove("active");
+  linkC.classList.add("not-selected");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   document.querySelector("#current-degrees").innerHTML = Math.round(
     fahrenheitTemperature
@@ -115,6 +118,9 @@ linkF.addEventListener("click", changeToFahrenheit);
 
 function changeToCelsius(event) {
   event.preventDefault();
+  linkC.classList.add("active");
+  linkF.classList.remove("active");
+  linkF.classList.add("not-selected");
   document.querySelector("#current-degrees").innerHTML =
     Math.round(celsiusTemperature);
 }
