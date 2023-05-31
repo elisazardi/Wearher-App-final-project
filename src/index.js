@@ -38,31 +38,32 @@ if (minutes < 10) {
 
 //change h2 in html with real time
 let time = document.querySelector("#date");
-time.innerHTML = `${day} ${hour}:${minutes}`;
+time.innerHTML = `${day} ${hour}:${minutes},`;
 
 //Display Weather Condition
 function displayWeatherCondition(response) {
   document.querySelector("#current-degrees").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#humidity").innerHTML =
+    response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.condition.description;
 
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector(
     "#future-forecast"
-  ).innerHTML = `Next 5 days in ${response.data.name}:`;
+  ).innerHTML = `Next 5 days in ${response.data.city}:`;
 }
 
 //Search function
 function searchCity(city) {
-  let apiKey = "88134f6c092b00413b86ee23c891bee8";
+  let apiKey = "fa303238t2b72o631ab5a346fd3e0bab";
   let unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
@@ -78,9 +79,9 @@ searchForm.addEventListener("submit", handleSubmit);
 //current location
 
 function searchLocation(position) {
-  let apiKey = "88134f6c092b00413b86ee23c891bee8";
+  let apiKey = "fa303238t2b72o631ab5a346fd3e0bab";
   let unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 

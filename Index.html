@@ -44,6 +44,7 @@
                 id="input-city"
               />
             </div>
+
             <div class="col-3">
               <form>
                 <input
@@ -54,6 +55,7 @@
                 />
               </form>
             </div>
+
             <div class="col-2">
               <button type="button" class="btn" id="locationButton">📍</button>
             </div>
@@ -68,59 +70,64 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <h2 class="date-time" id="date"></h2>
+            <span class="weather-description" id="date"></span>
+            <span class="weather-description" id="description"></span>
+            <br />
+            <span class="weather-description"
+              >Wind: <span id="wind"></span>km/h -
+            </span>
+            <span class="weather-description">
+              Humidity: <span id="humidity"></span>%
+            </span>
+          </div>
+          <div class="col-6">
+            <div class="d-flex degrees-description justify-content-end">
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+                alt=""
+                id="icon"
+              />
+              <h1 class="current-degrees" id="current-degrees"></h1>
+              <span class="d-f"
+                ><a href="#" id="degrees-to-f">°C |</a>
+                <a href="#" id="f-to-degrees">°F</a></span
+              >
+            </div>
           </div>
         </div>
         <br />
 
-        <div class="row">
-          <div class="col-6">
-            <h1 class="current-degrees" id="current-degrees"></h1>
-            <span class="d-f"
-              ><a href="#" id="degrees-to-f">°C |</a>
-              <a href="#" id="f-to-degrees">°F</a></span
-            >
-            <p id="description"></p>
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Wind: <span id="wind"></span>km/h</li>
-              <li>Humidity: <span id="humidity"></span>%</li>
-            </ul>
-          </div>
-        </div>
-
         <h3 id="future-forecast">Next 5 days in Milan:</h3>
-        <div class="row row justify-content-evenly">
-          <div class="col-2">
+        <div class="row">
+          <div class="col">
             Sun
             <br />
             <i class="fa-regular fa-sun"></i>
             <br />
             17°
           </div>
-          <div class="col-2">
+          <div class="col">
             Mon
             <br />
             <i class="fa-regular fa-sun"></i>
             <br />
             17°
           </div>
-          <div class="col-2">
+          <div class="col">
             Tue
             <br />
             <i class="fa-regular fa-sun"></i>
             <br />
             17°
           </div>
-          <div class="col-2">
+          <div class="col">
             Wed
             <br />
             <i class="fa-regular fa-sun"></i>
             <br />
             17°
           </div>
-          <div class="col-2">
+          <div class="col">
             Thu
             <br />
             <i class="fa-regular fa-sun"></i>
@@ -129,12 +136,12 @@
           </div>
         </div>
       </div>
-      <p>
+      <small>
         <a href="https://github.com/elisazardi/Wearher-App-final-project.git"
           >Open-source code</a
         >
         by Elisa Zardi
-      </p>
+      </small>
     </div>
     <script src="src/index.js"></script>
   </body>

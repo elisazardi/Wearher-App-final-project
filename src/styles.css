@@ -1,14 +1,16 @@
+.container {
+  margin: 0 auto;
+  max-width: 700px;
+}
 .weather-app {
   border: 1px grey solid;
-  padding: 30px;
+  padding: 35px;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 700px;
 }
-h1,
-h2,
-h3,
-p {
+
+body {
   font-family: "Mukta", sans-serif;
 }
 
@@ -17,21 +19,38 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .current-degrees {
   display: inline;
-  font-size: 50px;
+  font-size: 65px;
   padding-right: 5px;
   margin: 5px;
+  line-height: 0;
 }
 
 .d-f {
   position: relative;
   bottom: 20px;
 }
-.date-time {
-  font-size: 18px;
+
+#description::first-letter {
+  color: red;
+}
+
+.weather-description {
+  font-size: 16px;
   font-weight: 200;
+  line-height: 1.2px;
+}
+.degrees-description {
+  margin-right: 20px;
+}
+#icon {
+  position: relative;
+  bottom: 45px;
+}
+.small {
+  margin: 0 auto;
 }
