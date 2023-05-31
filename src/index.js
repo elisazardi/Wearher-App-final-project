@@ -57,6 +57,15 @@ function displayWeatherCondition(response) {
   document.querySelector(
     "#future-forecast"
   ).innerHTML = `Next 5 days in ${response.data.city}:`;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.condition.description);
 }
 
 //Search function
