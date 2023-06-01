@@ -54,9 +54,6 @@ function displayWeatherCondition(response) {
     response.data.condition.description;
 
   document.querySelector("#city").innerHTML = response.data.city;
-  document.querySelector(
-    "#future-forecast"
-  ).innerHTML = `Next 5 days in ${response.data.city}:`;
   document
     .querySelector("#icon")
     .setAttribute(

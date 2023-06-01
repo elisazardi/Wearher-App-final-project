@@ -27,13 +27,13 @@ h3 {
   display: inline;
   font-size: 65px;
   padding-right: 10px;
-
-  line-height: 0;
+  line-height: 0.4;
+  margin: 0;
 }
 
 .d-f {
   position: relative;
-  bottom: 28px;
+  bottom: 17px;
 }
 
 .weather-description {
@@ -43,7 +43,6 @@ h3 {
 }
 .degrees-description {
   margin-right: 20px;
-  margin-bottom: 5px;
 }
 
 .not-selected {
@@ -60,12 +59,26 @@ h3 {
 
 #icon {
   position: relative;
-  bottom: 45px;
+  bottom: 35px;
   height: 90px;
   width: 90px;
 }
 
-.select {
+.weather-forecast {
+  text-align: center;
+}
+.forecast-date {
+  font-size: 17px;
+  font-weight: 350;
+}
+
+.forecast-temperature {
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.forecast-temperature-max {
+  color: lightsalmon;
 }
 .small {
   margin: 0 auto;
