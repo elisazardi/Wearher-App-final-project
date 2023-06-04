@@ -80,6 +80,11 @@ h3 {
 .forecast-temperature-max {
   color: lightsalmon;
 }
-.small {
-  margin: 0 auto;
+
+a {
+  color: lightsalmon;
+  text-decoration: none;
+}
+small {
+  font-weight: 300;
 }

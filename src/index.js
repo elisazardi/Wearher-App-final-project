@@ -40,6 +40,31 @@ if (minutes < 10) {
 let time = document.querySelector("#date");
 time.innerHTML = `${day} -`;
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let forecastHTML = "";
+  forecastElement.innerHTML = forecastHTML;
+  forecastElement.innerHTML = `
+  <div class="weather-forecast" id="weather-forecast">
+    <div class="row">
+      <div class="col-2">
+        <div class="forecast-date">Sun</div>
+        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="forecast-icon" width="40"/>
+        <div class="forecast-temperature">
+        <span class="forecast-temperature-max">17°</span>
+        <span class="forecast-temperature min">13°</span>
+            </div>
+            </div>
+          </div>
+        </div>`;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "fa303238t2b72o631ab5a346fd3e0bab";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 //Display Weather Condition
 function displayWeatherCondition(response) {
   celsiusTemperature = response.data.temperature.current;
@@ -63,6 +88,8 @@ function displayWeatherCondition(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.condition.description);
+
+  getForecast(response.data.coordinates);
 }
 
 //Search function
@@ -100,6 +127,7 @@ locationButton.addEventListener("click", getCurrentLocation);
 
 //change from degrees to f
 let celsiusTemperature = null;
+
 function changeToFahrenheit(event) {
   event.preventDefault();
   linkF.classList.add("active");
@@ -126,3 +154,5 @@ linkC.addEventListener("click", changeToCelsius);
 
 //Search default city
 searchCity("Barcellona");
+
+displayForecast();
