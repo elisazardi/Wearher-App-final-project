@@ -3,13 +3,14 @@
   max-width: 700px;
 }
 .weather-app {
-  border: 1px grey solid;
-  padding: 35px;
+  border: 1px lightsalmon solid;
+  padding: 45px;
   margin: 0px auto;
-  margin-top: 60px;
+  margin-top: 100px;
   margin-bottom: 7px;
   border-radius: 10px;
   max-width: 700px;
+  box-shadow: 1px 5px 5px rgba(19, 23, 136, 0.08);
 }
 
 body {
