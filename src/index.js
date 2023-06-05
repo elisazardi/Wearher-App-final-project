@@ -40,24 +40,47 @@ if (minutes < 10) {
 let time = document.querySelector("#date");
 time.innerHTML = `${day} -`;
 
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
 
-  let forecastHTML = "";
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+              <div class="forecast-date">${formatForecastDay(
+                forecastDay.time
+              )}</div>
+              <img
+                src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  forecastDay.condition.icon
+                }.png"
+                alt="forecast-icon"
+                width="50"
+              />
+              <div class="forecast-temperature">
+                <span class="forecast-temperature-max">${Math.round(
+                  forecastDay.temperature.maximum
+                )}°</span>
+                <span class="forecast-temperature min">${Math.round(
+                  forecastDay.temperature.minimum
+                )}° </span>
+              </div>
+            </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  forecastElement.innerHTML = `
-  <div class="weather-forecast" id="weather-forecast">
-    <div class="row">
-      <div class="col-2">
-        <div class="forecast-date">Sun</div>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="forecast-icon" width="40"/>
-        <div class="forecast-temperature">
-        <span class="forecast-temperature-max">17°</span>
-        <span class="forecast-temperature min">13°</span>
-            </div>
-            </div>
-          </div>
-        </div>`;
 }
 
 function getForecast(coordinates) {
@@ -154,5 +177,3 @@ linkC.addEventListener("click", changeToCelsius);
 
 //Search default city
 searchCity("Barcellona");
-
-displayForecast();

@@ -5,7 +5,9 @@
 .weather-app {
   border: 1px grey solid;
   padding: 35px;
-  margin: 20px auto;
+  margin: 0px auto;
+  margin-top: 60px;
+  margin-bottom: 7px;
   border-radius: 10px;
   max-width: 700px;
 }
