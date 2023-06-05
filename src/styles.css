@@ -29,14 +29,16 @@ h3 {
 .current-degrees {
   display: inline;
   font-size: 65px;
-  padding-right: 10px;
+  padding-right: 5px;
   line-height: 0.4;
   margin: 0;
 }
 
-.d-f {
+.celsius {
   position: relative;
   bottom: 17px;
+  color: black;
+  font-weight: 300;
 }
 
 .weather-description {
@@ -46,18 +48,6 @@ h3 {
 }
 .degrees-description {
   margin-right: 20px;
-}
-
-.not-selected {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-
-.active {
-  text-decoration: none;
-  color: lightsalmon;
-  cursor: default;
 }
 
 #icon {

@@ -148,32 +148,5 @@ function getCurrentLocation(event) {
 let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", getCurrentLocation);
 
-//change from degrees to f
-let celsiusTemperature = null;
-
-function changeToFahrenheit(event) {
-  event.preventDefault();
-  linkF.classList.add("active");
-  linkC.classList.remove("active");
-  linkC.classList.add("not-selected");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  document.querySelector("#current-degrees").innerHTML = Math.round(
-    fahrenheitTemperature
-  );
-}
-let linkF = document.querySelector("#fahrenheit");
-linkF.addEventListener("click", changeToFahrenheit);
-
-function changeToCelsius(event) {
-  event.preventDefault();
-  linkC.classList.add("active");
-  linkF.classList.remove("active");
-  linkF.classList.add("not-selected");
-  document.querySelector("#current-degrees").innerHTML =
-    Math.round(celsiusTemperature);
-}
-let linkC = document.querySelector("#celsius");
-linkC.addEventListener("click", changeToCelsius);
-
 //Search default city
 searchCity("Barcellona");
